@@ -30,20 +30,16 @@ export default function bfs(graph: WeightedAdjacencyMatrix, source: number, need
         // Assuming zero means no edge exists between curretn node and node i
         continue
       }
-      console.log(`${node}->${i}`)
 
       if(seen[i]){
         continue 
       }
 
       visited.push(i)
-      console.log(`setting seen[${i}] to true`)
       seen[i] = true
       prev[i] = node
     }
 
-    // console.log(seen)
-    // console.log(prev)
   }
 
   if(seen[needle]){
