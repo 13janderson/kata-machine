@@ -22,6 +22,9 @@ export default class MinHeap {
   }
 
   delete(): number {
+    if (this.length == 0){
+      return -1
+    }
     const min = this.heap[0]
     // Use last inserted element as new root in heap
     this.heap[0] = this.heap[this.length - 1]
