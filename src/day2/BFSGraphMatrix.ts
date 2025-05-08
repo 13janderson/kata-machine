@@ -44,8 +44,6 @@ export default function bfs(graph: WeightedAdjacencyMatrix, source: number, need
 
   if(seen[needle]){
     const path = backtrack_to_start(needle, prev)
-    // console.log(prev)
-    // console.log(path)
     return path
   }
 
