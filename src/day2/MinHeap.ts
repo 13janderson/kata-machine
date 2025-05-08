@@ -29,9 +29,9 @@ export default class MinHeap {
     // Use last inserted element as new root in heap
     this.heap[0] = this.heap[this.length - 1]
     this.heap.pop() // Remove last element from the end
+    this.length -= 1
     this.sift_down(0)
 
-    this.length -= 1
     return min
   }
 
@@ -79,12 +79,10 @@ export default class MinHeap {
     // sift down startign at idx in heap
     // want to sift down if an item is currently greater than its children
     const node = this.heap[idx]
-    console.log(`sifting down ${node}`)
     const left_child_idx = this.left_child(idx)
     const right_child_idx = this.right_child(idx)
     const left_child = this.heap[left_child_idx]
     const right_child = this.heap[right_child_idx]
-    console.log(`left child: ${left_child} right child: ${right_child}`)
 
     var smallest_child: number
     var smallest_child_idx: number 
@@ -106,8 +104,6 @@ export default class MinHeap {
       }
     }
 
-    console.log(`smallest child ${smallest_child}`)
-
     if (node > smallest_child){
       // swap with smallest
       this.swap(idx, smallest_child_idx)
@@ -118,17 +114,17 @@ export default class MinHeap {
   }
 
 }
-//
-var heap = new MinHeap()
-heap.insert(7)
-heap.debug()
-heap.insert(2)
-heap.debug()
-heap.insert(1)
-heap.debug()
-heap.delete()
-heap.debug()
-heap.insert(0)
-heap.debug()
-heap.delete()
-heap.debug()
+
+// var heap = new MinHeap()
+// heap.insert(7)
+// heap.debug()
+// heap.insert(2)
+// heap.debug()
+// heap.insert(1)
+// heap.debug()
+// heap.delete()
+// heap.debug()
+// heap.insert(0)
+// heap.debug()
+// heap.delete()
+// heap.debug()
