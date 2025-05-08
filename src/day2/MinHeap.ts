@@ -51,6 +51,9 @@ export default class MinHeap {
   }
 
   private bubble_up(idx: number): void{
+    if (idx == 0){
+      return
+    }
     // bubbles up starting at idx in heap
     const node = this.heap[idx]
     const parent_index = this.parent(idx)
@@ -67,6 +70,9 @@ export default class MinHeap {
   }
 
   private sift_down(idx: number): void{
+    if(idx >= this.length){
+      return
+    }
     // sift down startign at idx in heap
     // want to sift down if an item is currently greater than its children
     const node = this.heap[idx]
